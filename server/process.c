@@ -1843,7 +1843,7 @@ DECL_HANDLER(set_process_info)
 
     if ((process = get_process_from_handle( req->handle, PROCESS_SET_INFORMATION )))
     {
-        if (req->mask & SET_PROCESS_INFO_PRIORITY) set_process_priority( process, req->priority );
+                    if (req->mask & SET_PROCESS_INFO_PRIORITY) set_process_priority( process, req->priority );
         if (req->mask & SET_PROCESS_INFO_AFFINITY) set_process_affinity( process, req->affinity );
         release_object( process );
     }
