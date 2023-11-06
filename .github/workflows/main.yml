@@ -12,7 +12,7 @@ jobs:
           brew install --formula bison mingw-w64 pkgconfig freetype gnutls molten-vk sdl2
       - name: Configure
         run: |
-          ./configure
+          configure
       - name: Build
         run: |
           make
