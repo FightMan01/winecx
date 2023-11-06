@@ -62,10 +62,10 @@ jobs:
 
       - name: Tar Wine
         run: |
-          tar -czvf $GITHUB_WORKSPACE.tar.gz $GITHUB_WORKSPACE
+          tar -czvf wine.tar.gz $GITHUB_WORKSPACE
 
       - name: Upload Wine
         uses: actions/upload-artifact@v3
         with:
           name: "wine"
-          path: $GITHUB_WORKSPACE.tar.gz
+          path: wine.tar.gz
