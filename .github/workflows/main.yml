@@ -12,7 +12,7 @@ jobs:
           brew install --formula bison mingw-w64 pkgconfig freetype gnutls molten-vk sdl2
       - name: Configure
         run: |
-          ./$GITHUB_WORKSPACE/configure
+          $GITHUB_WORKSPACE/configure
       - name: Build
         run: |
           make -j$(sysctl -n hw.ncpu 2>/dev/null)
