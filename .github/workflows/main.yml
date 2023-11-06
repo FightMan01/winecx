@@ -14,7 +14,43 @@ jobs:
           brew install --formula bison mingw-w64 pkgconfig freetype gnutls molten-vk sdl2
       - name: Configure
         run: |
-          $GITHUB_WORKSPACE/configure
+          $GITHUB_WORKSPACE/configure \
+            --prefix= \
+            --disable-tests \
+            --disable-winedbg \
+            --enable-win64 \
+            --without-alsa \
+            --without-capi \
+            --with-coreaudio \
+            --with-cups \
+            --without-dbus \
+            --without-fontconfig \
+            --with-freetype \
+            --with-gettext \
+            --without-gettextpo \
+            --without-gphoto \
+            --with-gnutls \
+            --without-gssapi \
+            --without-gstreamer \
+            --without-inotify \
+            --without-krb5 \
+            --with-mingw \
+            --without-netapi \
+            --without-openal \
+            --with-opencl \
+            --with-opengl \
+            --without-oss \
+            --with-pcap \
+            --with-pthread \
+            --without-pulse \
+            --without-sane \
+            --with-sdl \
+            --without-udev \
+            --with-unwind \
+            --without-usb \
+            --without-v4l2 \
+            --with-vulkan \
+            --without-x
       - name: Build
         run: |
           make -j$(sysctl -n hw.ncpu 2>/dev/null)
