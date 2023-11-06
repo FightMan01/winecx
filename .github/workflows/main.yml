@@ -59,3 +59,13 @@ jobs:
       - name: Build
         run: |
           make -j$(sysctl -n hw.ncpu 2>/dev/null)
+
+      - name: Tar Wine
+        run: |
+          tar -czvf $GITHUB_WORKSPACE.tar.gz $GITHUB_WORKSPACE
+
+      - name: Upload Wine
+        uses: actions/upload-artifact@v3
+        with:
+          name: "wine"
+          path: $GITHUB_WORKSPACE.tar.gz
